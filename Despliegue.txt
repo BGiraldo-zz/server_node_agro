@@ -1,0 +1,70 @@
+
+Integrantes
+
+Brian David Tafur Londoño
+Brayan Estiven Giraldo Suazo
+
+--> El backend esta completo hasta el momento, a menos que cuando se haga el front requiramos más servicios rest, entonces se completara 
+
+
+----------------------------------------------------------------------- Schema del modelo
+
+{
+    "documento": String,
+    "nombre": String,
+    "genero": String,
+    "edad": Number,
+    "user": String,
+    "pass": String,
+	 "terrenos": [
+					{
+						"nombre": String,
+						"extension": Number,
+						"postulados": Array,
+						"productos": Array
+					},
+					{
+						"nombre": String,
+						"extension": Number,
+						"postulados": [
+							{
+								"_id": String,
+								"nombre": String,
+								"genero": String,
+								"edad": Number,
+								"user": String,
+								"pass": String,
+								"__v": Number
+                            }
+						],
+						"productos": [
+						{
+							"nombre": String
+						},
+						{
+							"nombre": String
+						}
+						]
+					}
+				]
+}
+
+--------------------------------------------------------------------------------- Para desplegar
+
+1. Tener Mongodb corriendo por el puerto 27017
+
+2. En la carpeta de proyecto Ejecutar el comando
+->npm install
+para las dependencias
+
+3. para correr el proyecto, ubicado en la carpeta principal ejecutar el comando
+-> node run.js
+
+4. Dentro del proyecto encontrara el modelo que recibe el dueño y postulados (Paquete Modelos)
+
+5. Las rutas de los servicios las encontrara en el paquete rutas, especificadas para dueño y postulado
+
+6. Tenga en cuenta que el servidor corre por el puerto 8891
+
+-------------------------------------------------------------------------------------
+
